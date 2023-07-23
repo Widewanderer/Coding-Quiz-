@@ -23,6 +23,10 @@ button {
   margin-left: 50px;
   width: 50%;
 }
+button:hover {
+  background-color: #648865;
+  transition-duration: 0.8s;
+}
 
 footer {
   min-height: 40px;
@@ -47,8 +51,8 @@ h2 {
 }
 
 header {
-  width: 200px;
-  height: 100px;
+  width: 220px;
+  min-height: 80px;
 }
 .main-box {
   border: 5px solid var(--borderlands);
