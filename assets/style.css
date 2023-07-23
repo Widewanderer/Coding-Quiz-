@@ -1,0 +1,60 @@
+:root {
+  --bacground-dark: #0e0e0e;
+  --MechanicusRed: #9a1115;
+  --SlavGreen: #366212;
+  --Uranium: #2cfa1f;
+  --borderlands: #2c2a2a;
+}
+
+body {
+  background-color: rgb(31, 32, 32);
+  font-family: "Press Start 2P", cursive, sans-serif;
+}
+
+button {
+  background-color: gray;
+  color: var(--SlavGreen);
+  border: 5px solid rgb(73, 73, 73);
+}
+
+h1 {
+  color: ;
+  font-size: xx-large;
+  text-decoration: underline;
+  background-color: var(--bacground-dark);
+  color: var(--SlavGreen);
+  /* margin: auto;
+  width: 80%;
+  margin: 50px; */
+  align-content: center;
+  /* why does text align not work?  */
+}
+
+h2 {
+  font-size: large;
+}
+
+header {
+  width: 200px;
+  height: 100px;
+}
+.main-box {
+  border: 5px solid var(--borderlands);
+  text-align: center;
+  background-color: var(--bacground-dark);
+  color: var(--SlavGreen);
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.main-text {
+  margin: 30px;
+}
+
+.top-box {
+  border: 5px solid var(--borderlands);
+  max-width: 900px;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
