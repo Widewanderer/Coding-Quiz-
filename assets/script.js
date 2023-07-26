@@ -1,15 +1,22 @@
 var mainText = document.querySelector("#main-text");
 var answerButtons = document.querySelector("#buttons-q"); // works if I used created buttons?
 var startButton = document.querySelector("#button-main");
+var timer = document.querySelector("#timer");
+var timeLeft = 60;
 
+function startTimer() {
+  setInterval(() => {
+    timeLeft--;
+    timer.textContent = timeLeft;
+  }, 1000);
+}
 // Button features
 
 // use function at start and end of quiz. Combine with event lister for initiate quiz & quiz end.
 function buttonToggleHidden(element) {
-  if (element.hasAttribute("hidden")) {
-    element.removeAttribute("hidden");
+  if (element.style.display === "hidden") {
+    element.style.display = "block";
   } else {
-    console.log("Hej");
     element.style.display = "none";
     // element.hidden = true;
   }
@@ -61,7 +68,7 @@ var questions = [
   {
     question:
       "Which built-in method is used to sort elements in an array in JavaScript?",
-    choices: ["arrange()", "order(), sort(), organize()"],
+    choices: ["arrange()", "order()", "sort()", "organize()"],
     answer: "sort()",
   },
   {
@@ -70,7 +77,8 @@ var questions = [
     choices: [
       "event.preventDefault()",
       "link.cancelDefault()",
-      "stopDefaultAction(),preventLinkClick()",
+      "stopDefaultAction()",
+      "preventLinkClick()",
     ],
     answer: "event.preventDefault()",
   },
@@ -102,7 +110,8 @@ var questions = [
     choices: [
       "The current date and time",
       "The global window object",
-      "The HTML document itself, The context where the function is called",
+      "The HTML document itself",
+      "The context where the function is called",
     ],
     answer: "The context where the function is called",
   },
@@ -116,6 +125,7 @@ startButton.addEventListener("click", startQuiz);
 function startQuiz() {
   buttonToggleHidden(startButton);
   nextQuestion();
+  startTimer();
 }
 
 function nextQuestion() {
@@ -127,6 +137,9 @@ function nextQuestion() {
     answerButtons.append(button);
     button.addEventListener("click", () => {
       index++;
+      answerButtons.innerHTML = "";
+      // is answer correct? if correct add 10 points to score, if wrong subtract 5 seconds from timer.      (update UI)
+
       nextQuestion();
     });
   }
